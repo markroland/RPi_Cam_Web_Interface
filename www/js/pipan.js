@@ -1,11 +1,22 @@
 // mode=1 pipan, 2=servoblaster
 var mode = 0;
 
-var pan = 100;
-var tilt = 100;
+/*
+My Customizations
+5/20/2018
+*/
+var pan_min = -30; // 90-degrees right (servo: 20)
+var pan_max = 240; // 90-degrees left (servo: 290)
+var pan_init = 100; // Centered (servo: 150)
+var tilt_min = -170; // Points up (servo: -39)
+var tilt_max = 200; // Point down (servo: 220)
+var tilt_init = -40; // Level (servo: 52)
+
+var pan = pan_init; // Default: 100
+var tilt = tilt_init; // Default: 100
 var cmd = "";
-var pan_bak = 100;
-var tilt_bak = 100;
+var pan_bak = pan_init;
+var tilt_bak = tilt_init;
 var pan_start;
 var tilt_start;
 var touch = false;
@@ -51,25 +62,25 @@ function ajax_pipan_start () {
 }
  
 function servo_left () {
-  if(pan <= 190) pan += 10;
+  if(pan <= pan_max) pan += 10;
   cmd = "left";
   ajax_pipan_start();
 }
  
 function servo_right () {
-  if(pan >= 10) pan -= 10;
+  if(pan >= pan_min) pan -= 10;
   cmd = "right";
   ajax_pipan_start();
 }
  
 function servo_up () {
-  if(tilt >= 10) tilt -= 10;
+  if(tilt >= tilt_min) tilt -= 10;
   cmd = "up";
   ajax_pipan_start();
 }
  
 function servo_down () {
-  if(tilt <= 190) tilt += 10;
+  if(tilt <= tilt_max) tilt += 10;
   cmd = "down";
   ajax_pipan_start();
 }
