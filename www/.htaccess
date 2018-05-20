@@ -1,0 +1,10 @@
+AuthName "RPi Cam Web Interface Restricted Area"
+AuthType Basic
+AuthUserFile /usr/local/.htpasswd
+Require valid-user
+
+SetEnvIf Request_URI "apple-touch-icon.png$" allow
+
+Allow from env=allow
+Order allow,deny
+Satisfy any

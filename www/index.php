@@ -254,6 +254,20 @@
    <head>
       <meta name="viewport" content="width=550, initial-scale=1">
       <title><?php echo CAM_STRING; ?></title>
+
+      <meta name="apple-mobile-web-app-title" content="PiCam">
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+      <!-- <link rel="apple-touch-startup-image" href="apple-touch-startup.png" /> -->
+      <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+      <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+      <link rel="manifest" href="site.webmanifest">
+      <link rel="mask-icon" href="safari-pinned-tab.svg" color="#bc1142">
+      <meta name="msapplication-TileColor" content="#1b5432">
+      <meta name="theme-color" content="#ffffff">
+
       <link rel="stylesheet" href="css/style_minified.css" />
       <link rel="stylesheet" href="<?php echo getStyle(); ?>" />
       <script src="js/style_minified.js"></script>
